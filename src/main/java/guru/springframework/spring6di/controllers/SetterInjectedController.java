@@ -11,11 +11,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class SetterInjectedController {
 
+
     private GreetingService greetingService;
 
+    @Qualifier("setterGreetingBean")
     @Autowired
-    public void setGreetingService(@Qualifier("setterGreetingsService") GreetingService greetingService) {
-        System.out.println("SetterInjectedController.setGreetingService");
+    public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
