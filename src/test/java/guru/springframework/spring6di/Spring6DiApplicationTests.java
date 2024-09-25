@@ -10,19 +10,20 @@ import org.springframework.context.ApplicationContext;
 class Spring6DiApplicationTests {
 
     @Autowired
-    private ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
 
     @Autowired
-    private MyController myController;
+    MyController myController;
 
     @Test
-    void testAutowiredOfGetController() {
+    void testAutowireOfController() {
         System.out.println(myController.sayHello());
     }
 
     @Test
     void testGetControllerFromCtx() {
-        var myController = applicationContext.getBean(MyController.class);
+        MyController myController = applicationContext.getBean(MyController.class);
+
         System.out.println(myController.sayHello());
     }
 
