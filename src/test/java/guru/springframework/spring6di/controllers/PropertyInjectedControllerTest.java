@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PropertyInjectedControllerTest {
 
     @Autowired
-    PropertyInjectedController propertyInjectedController;
+    private PropertyInjectedController propertyInjectedController;
 
     @Test
     void sayHello() {
